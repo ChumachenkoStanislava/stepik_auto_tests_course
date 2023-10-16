@@ -1,11 +1,11 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 import math
+from core.utils import get_chrome
 
 try:
     link = 'http://suninjuly.github.io/get_attribute.html'
-    browser = webdriver.Chrome()
+    browser = get_chrome()
     browser.get(link)
 
 

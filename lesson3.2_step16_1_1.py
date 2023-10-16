@@ -1,14 +1,13 @@
-from selenium import webdriver
 import unittest
 from selenium.webdriver.common.by import By
+from core.utils import get_chrome
 
 link = "http://suninjuly.github.io/registration2.html"
-browser = webdriver.Chrome()
+browser = get_chrome()
 browser.get(link)
 
 
-
-class Test_input(unittest.TestCase):
+class TestInput(unittest.TestCase):
     def test_input1(self):
         input1 = browser.find_element('xpath', "//input[@placeholder='Input your name']")
         input1.send_keys("Ivan")
@@ -28,7 +27,6 @@ class Test_input(unittest.TestCase):
     def test_input5(self):
         confirmation = browser.find_element(By.TAG_NAME, 'h1')
         x = confirmation.text
-
 
         self.assertEqual('Congratulations! You have successfully registered!', x, " * Registration failed * ")
 

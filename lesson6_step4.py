@@ -1,11 +1,11 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
+from core.utils import get_chrome
 
 link = " http://suninjuly.github.io/find_link_text"
 
 try:
-    browser = webdriver.Chrome()
+    browser = get_chrome()
     browser.get(link)
 
     input1 = browser.find_element(By.TAG_NAME, value1)

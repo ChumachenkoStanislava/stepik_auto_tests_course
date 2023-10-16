@@ -1,15 +1,12 @@
-
 import math
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
-
-
+from core.utils import get_chrome
 
 link = 'http://suninjuly.github.io/find_link_text'
 
 try:
-    browser = webdriver.Chrome()
+    browser = get_chrome()
     browser.get(link)
     link = browser.find_element(By.PARTIAL_LINK_TEXT, str(math.ceil(math.pow(math.pi, math.e)*10000)))
     link.click()

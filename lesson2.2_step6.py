@@ -1,13 +1,13 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 import math
-
+import time
+from core.utils import get_chrome
 
 def calc(x):
     return str(math.log(abs(12 * math.sin(int(x)))))
 
 try:
-    browser = webdriver.Chrome()
+    browser = get_chrome()
     link = "https://SunInJuly.github.io/execute_script.html"
     browser.get(link)
 

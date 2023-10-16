@@ -2,11 +2,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import os
 import time
-
+from core.utils import get_chrome
 
 
 try:
-    browser = webdriver.Chrome()
+    browser = get_chrome()
     link = "http://suninjuly.github.io/file_input.html"
     browser.get(link)
 
